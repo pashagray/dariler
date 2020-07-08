@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      drugstore: "Pharmacy"
+    attributes:
+      drugstore:
+        title: "Pharmacy name"
+        coords: "Coordinates"
+        city: "City"
+        address: "Address"

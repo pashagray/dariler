@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="title is-1">
+    <%=  t(".title") %>
+  </h1>
+
+  <aside class="menu">
+    <ul class="menu-list">
+      <% City.slugs.each do |city| %>
+        <li>
+          <%= link_to t("cities.#{city}"), "/#{city}", class: "" %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+</div>

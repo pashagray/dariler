@@ -1,0 +1,5 @@
+ru:
+  drugstores:
+    create:
+      success: "Аптека успешно добавлена"
+      failure: "Проверьте форму на ошибки"

@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "../src/application/js/navbar";
+// import "../src/application/js/ymaps";
 
 import "bulma/css/bulma.min.css"
 

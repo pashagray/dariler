@@ -12,9 +12,11 @@
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-      </a>
+      <div class="navbar-item">
+        <% if @city %>
+          <%= link_to t("cities.#{@city}"), cities_path, class: "button is-primary" %>
+        <% end %>
+      </div>
 
       <a role="button" id="navbar-menu-burger" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
         <span aria-hidden="true"></span>
@@ -42,7 +44,7 @@
             <%= link_to t(".topbar.add_drug"), new_drug_path, class: "navbar-item" %>
 
             <a class="navbar-item">
-              <%= t(".topbar.add_drugstore") %>
+              <%= link_to t(".topbar.add_drugstore"), new_drugstore_path, class: "navbar-item" %>
             </a>
             <hr class="navbar-divider">
             <a class="navbar-item">
@@ -54,7 +56,7 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
-          Народный мониторинг наличия лекарств в аптеках
+
         </div>
       </div>
     </div>

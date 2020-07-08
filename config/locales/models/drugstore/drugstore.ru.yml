@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      drugstore: "Аптека"
+    attributes:
+      drugstore:
+        title: "Название аптеки"
+        coords: "Координаты"
+        city: "Город"
+        address: "Адрес"

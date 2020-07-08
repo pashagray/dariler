@@ -1,4 +1,4 @@
-require "rails_helper"
+require "feature_helper"
 
 describe "User creates new drug", type: :feature do
   before do
@@ -36,7 +36,7 @@ describe "User creates new drug", type: :feature do
     end
 
     it "redirects to drug page" do
-      expect(page).to have_current_path(drug_path(drug))
+      expect(page).to have_current_path(drug_path(drug, city: City.default))
     end
 
     it "shows notification" do
@@ -55,7 +55,7 @@ describe "User creates new drug", type: :feature do
     end
 
     it "redirects to page of created drug" do
-      expect(page).to have_current_path(drug_path(Drug.last))
+      expect(page).to have_current_path(drug_path(Drug.last, city: City.default))
     end
 
     it "shows success notification" do

@@ -1,0 +1,5 @@
+en:
+  drugstores:
+    create:
+      success: "Pharmacy has been successfully added"
+      failure: "Check form for errors"

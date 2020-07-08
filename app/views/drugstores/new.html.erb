@@ -1,0 +1,67 @@
+<div class="container">
+  <h1 class="title is-1"><%= t(".title") %></h1>
+  <div class="row">
+    <%= form_for(@drugstore, builder: BulmaForm) do |f| %>
+      <div class="columns">
+        <div class="column is-half">
+          <p class="title is-3">
+            <%= t("cities.#{@city}") %>
+            <%= link_to 'Сменить город', cities_path, class: "button" %>
+          </p>
+          <%= f.hidden_field :coords %>
+          <%= f.text_field :title %>
+          <%= f.text_field :address %>
+          <div class="notification is-warning">
+            Не забудьте поставить метку на карте, где находится аптека. Просто щелкните в нужном месте на карте.
+          </div>
+        </div>
+        <div class="column is-half">
+          <div id="map" style="height: 350px; width: 100%;"></div>
+        </div>
+      </div>
+      <%= f.submit class: "button is-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<!-- TODO: Refactor -->
+<!-- Вынесено сюда для быстрого подключения функционала карт -->
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<%= SETTINGS[:ymaps][:key] %>" type="text/javascript"></script>
+<script>
+
+  document.addEventListener("turbolinks:load", function() {
+    var mapContainer = document.getElementById("map");
+
+    if (mapContainer)  {
+
+      var pointInput = document.getElementById("drugstore_coords");
+      var point = pointInput.value.split(",");
+
+      ymaps.ready(function () {
+        mapContainer.innerHTML = ""; // Hook for turbolinks restoration visits
+
+        var map = new ymaps.Map('map', {
+          center: point,
+          zoom: 12
+        });
+
+        var placemark = createPlacemark(point);
+
+        map.geoObjects.add(placemark)
+
+        map.events.add('click', function (e) {
+          var coords = e.get('coords');
+          console.log(placemark);
+          placemark.geometry.setCoordinates(coords);
+          pointInput.value = coords;
+        });
+      })
+    }
+
+    function createPlacemark(coords) {
+      return new ymaps.Placemark(point, {}, {
+        preset: 'islands#blueMedicalIcon'
+      });
+    }
+  });
+</script>

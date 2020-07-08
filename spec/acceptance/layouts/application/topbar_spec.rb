@@ -12,4 +12,8 @@ describe "Topbar functionality", type: :feature, js: true do
     expect(page).to have_current_path(new_drug_path)
   end
 
+  it "has \"Add pharmacy\" link" do
+    click_link "Add pharmacy"
+    expect(page).to have_current_path(new_drugstore_path)
+  end
 end
