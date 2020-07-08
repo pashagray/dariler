@@ -1,0 +1,6 @@
+en:
+  drugs:
+    create:
+      success: "Drug has been successfully added"
+      failure: "Check form for errors"
+      already_exists: "We already has this drug in our catalogue"

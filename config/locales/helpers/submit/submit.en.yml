@@ -1,0 +1,9 @@
+en:
+  helpers:
+    submit:
+      drug:
+        create: "Create drug"
+        update: "Update"
+      drugstore:
+        create: "Create pharmacy"
+        update: "Update"

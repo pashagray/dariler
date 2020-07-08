@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      drug: "Drug"
+    attributes:
+      drug:
+        title_ru: "Drug title"

@@ -1,0 +1,9 @@
+ru:
+  helpers:
+    submit:
+      drug:
+        create: "Добавить лекарство"
+        update: "Обновить данные"
+      drugstore:
+        create: "Добавить аптеку"
+        update: "Обновить данные"

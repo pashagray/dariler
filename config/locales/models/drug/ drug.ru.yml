@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    models:
+      drug: "Лекарство"
+    attributes:
+      drug:
+        title_ru: "Название лекарства"
