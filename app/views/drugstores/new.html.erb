@@ -10,7 +10,7 @@
           </p>
           <%= f.hidden_field :coords %>
           <%= f.text_field :title %>
-          <%= f.text_field :address %>
+          <%= f.text_field :address, readonly: "readonly", style: "background-color: lightgray;" %>
           <div class="notification is-warning">
             Не забудьте поставить метку на карте, где находится аптека. Просто щелкните в нужном месте на карте.
           </div>
@@ -23,10 +23,6 @@
     <% end %>
   </div>
 </div>
-
-<!-- TODO: Refactor -->
-<!-- Вынесено сюда для быстрого подключения функционала карт -->
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<%= SETTINGS[:ymaps][:key] %>" type="text/javascript"></script>
 <script>
 
   document.addEventListener("turbolinks:load", function() {
@@ -51,7 +47,10 @@
 
         map.events.add('click', function (e) {
           var coords = e.get('coords');
-          console.log(placemark);
+
+          ymaps.geocode(coords).then(res => {
+            document.getElementById("drugstore_address").value = extractAddress(res.geoObjects.get(0));
+          });
           placemark.geometry.setCoordinates(coords);
           pointInput.value = coords;
         });
@@ -62,6 +61,23 @@
       return new ymaps.Placemark(point, {}, {
         preset: 'islands#blueMedicalIcon'
       });
+    }
+
+    function extractAddress(geoRes) {
+      var address = []
+      if (geoRes.getThoroughfare()) {
+        address.push(geoRes.getThoroughfare())
+      }
+
+      if (geoRes.getPremise()) {
+        address.push(geoRes.getPremise())
+      }
+
+      if (geoRes.getPremiseNumber()) {
+        address.push(geoRes.getPremiseNumber())
+      }
+
+      return address.join(", ");
     }
   });
 </script>

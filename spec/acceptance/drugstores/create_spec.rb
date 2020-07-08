@@ -27,10 +27,12 @@ describe "User creates new drugstore", type: :feature do
     end
   end
 
-  context "when everything is OK" do
+  context "when everything is OK", js: true do
     before do
       fill_in "Pharmacy name", with: "Alchemist Lab"
-      fill_in "Address", with: "Dark & Old Forest"
+      # Imitate ymaps set value
+      # TODO: Better to create normal spec
+      page.execute_script("document.querySelector('#drugstore_address').value = 'Dark & Old Forest';")
       click_button "Create pharmacy"
     end
 

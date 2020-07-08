@@ -7,6 +7,9 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- TODO: Refactor -->
+    <!-- Вынесено сюда для быстрого подключения функционала карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<%= SETTINGS[:ymaps][:key] %>" type="text/javascript"></script>
   </head>
 
   <body>
