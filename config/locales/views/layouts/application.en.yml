@@ -1,0 +1,9 @@
+en:
+  layouts:
+    application:
+      topbar:
+        drugs: "Drugs"
+        drugstores: "Pharmacies"
+        add_drug: "Add drug"
+        add_drugstore: "Add pharmacy"
+        about: "About"

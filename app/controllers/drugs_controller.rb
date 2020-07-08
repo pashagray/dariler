@@ -13,7 +13,7 @@ class DrugsController < ApplicationController
       flash[:success] = t(".success")
       redirect_to drug_path(@drug)
     else
-      flash[:error] = t(".failure")
+      flash.now[:error] = t(".failure")
       render :new
     end
 

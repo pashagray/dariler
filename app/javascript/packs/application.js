@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import "../src/application/js/navbar";
+
 import "bulma/css/bulma.min.css"
 
 

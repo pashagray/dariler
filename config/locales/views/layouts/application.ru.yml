@@ -1,0 +1,9 @@
+ru:
+  layouts:
+    application:
+      topbar:
+        drugs: "Лекарства"
+        drugstores: "Аптеки"
+        add_drug: "Добавить лекарство"
+        add_drugstore: "Добавить аптеку"
+        about: "О проекте"
