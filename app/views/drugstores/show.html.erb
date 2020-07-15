@@ -2,4 +2,35 @@
   <h1 class="title is-1">
     <%= @drugstore.title %>
   </h1>
+
+  <hr>
+
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading"><%= t(".stats.available_drugs") %></p>
+        <p class="title"><%= @available_drugs.count %></p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading"><%= t(".stats.unavailable_drugs") %></p>
+        <p class="title"><%= @unavailable_drugs.count %></p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading"><%= t(".stats.noinfo_drugs") %></p>
+        <p class="title"><%= Drug.count - @available_drugs.count - @unavailable_drugs.count %></p>
+      </div>
+    </div>
+  </nav>
+
+  <hr>
+
+  <h2 class="title is-3"><%= t(".available_drugs") %></h2>
+  <%= render "druglist", drug_in_drugstores: @available_drugs %> 
+
+  <h2 class="title is-3"><%= t(".unavailable_drugs") %></h2>
+  <%= render "druglist", drug_in_drugstores: @unavailable_drugs %>
 </div>

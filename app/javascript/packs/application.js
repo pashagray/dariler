@@ -9,9 +9,11 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "../src/application/js/navbar";
+import "../src/application/js/time_helper";
 // import "../src/application/js/ymaps";
 
-import "bulma/css/bulma.min.css"
+import "bulma/css/bulma.min.css";
+import "../src/application/css/main.scss";
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

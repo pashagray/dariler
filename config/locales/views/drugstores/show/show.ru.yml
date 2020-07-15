@@ -1,0 +1,10 @@
+ru:
+  drugstores:
+    show:
+      stats:
+        available_drugs: "В наличии"
+        unavailable_drugs: "Отсутсвует"
+        noinfo_drugs: "Нет информации"
+        last_update: "Последнее обновление"
+      available_drugs: "Лекарства в наличии"
+      unavailable_drugs: "Отсутсвующие лекарства"

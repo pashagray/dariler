@@ -14,3 +14,44 @@
     </div>
   </div>
 </section>
+
+<div class="container pt-4">
+  <h3 class="title is-3">Последние обновления</h3>
+  <table class="table is-fullwidth is-bordered">
+    <thead>
+      <tr>
+        <th>Лекарство</th>
+        <th>Аптека</th>
+        <th class="has-text-right has-max-width-200">Цена</th>
+        <th class="has-text-centered has-max-width-200">
+          Статус
+        </th>
+        <th class="has-max-width-200">Время статуса</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @drug_in_drugstores.each do |drug| %>
+        <tr>
+          <td class="has-text-weight-bold">
+            <%= link_to drug.title_ru, drug_path(drug.drug_id) %>
+          </td>
+          <td class="has-text-weight-bold">
+            <%= link_to drug.drugstore.title, drugstore_path(drug.drugstore_id) %>
+            <p class="has-text-weight-normal"><%= drug.drugstore.address %></p>
+          </td>
+          <td class="has-text-right">
+            <%= format_price(drug.price) %>
+          </td>
+          <td class="has-text-centered">
+            <span class="<%= drug.available? ? 'has-text-success' : 'has-text-danger' %>">
+              <%= t("drug_in_drugstore.STATUSES.#{drug.status}") %>
+            </span>
+          </td>
+          <td>
+            <%= relative_time(drug.updated_at) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

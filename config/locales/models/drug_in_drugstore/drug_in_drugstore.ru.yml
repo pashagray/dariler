@@ -1,0 +1,5 @@
+ru:
+  drug_in_drugstore:
+    STATUSES:
+      AVAILABLE: "В наличии"
+      UNAVAILABLE: "Отсутствует"

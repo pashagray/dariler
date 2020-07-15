@@ -1,0 +1,5 @@
+en:
+  drugstores:
+    show:
+      available_drugs: "Available drugs"
+      unavailable_drugs: "Unavailable drugs"

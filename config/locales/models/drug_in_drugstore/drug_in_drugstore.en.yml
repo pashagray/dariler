@@ -1,0 +1,5 @@
+en:
+  drug_in_drugstore:
+    STATUSES:
+      AVAILABLE: "Available"
+      UNAVAILABLE: "Unavailable"

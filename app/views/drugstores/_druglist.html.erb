@@ -1,0 +1,33 @@
+<table class="table is-fullwidth is-bordered">
+    <thead>
+      <tr>
+        <th>Лекарство</th>
+        <th class="has-text-right has-max-width-200">Цена</th>
+        <th class="has-text-centered has-max-width-200">
+          <abbr title="Вы можете сменить статус кликнув на него">
+          Статус
+        </th>
+        <th class="has-max-width-200">Время статуса</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% drug_in_drugstores.each do |drug| %>
+        <tr>
+          <td class="has-text-weight-bold">
+            <%= link_to drug.title_ru, drug_path(drug.drug_id) %>
+          </td>
+          <td class="has-text-right">
+            <%= format_price(drug.price) %>
+          </td>
+          <td class="has-text-centered">
+            <a href="#" class="button is-<%= drug.available? ? 'success' : 'danger' %>">
+              <%= t("drug_in_drugstore.STATUSES.#{drug.status}") %>
+            </a>
+          </td>
+          <td>
+            <%= relative_time(drug.updated_at) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

@@ -20,6 +20,8 @@ class DrugstoresController < ApplicationController
 
   def show
     @drugstore = Drugstore.find(params[:id])
+    @available_drugs = @drugstore.available_drugs.includes(:drug).order_by_title_ru
+    @unavailable_drugs = @drugstore.unavailable_drugs.includes(:drug).order_by_title_ru
   end
 
   private

@@ -3,7 +3,7 @@
   <div class="row">
     <%= form_for(@drugstore, builder: BulmaForm) do |f| %>
       <div class="columns">
-        <div class="column is-half">
+        <div class="column is-one-third">
           <p class="title is-3">
             <%= t("cities.#{@city}") %>
             <%= link_to 'Сменить город', cities_path, class: "button" %>
@@ -15,7 +15,7 @@
             Не забудьте поставить метку на карте, где находится аптека. Просто щелкните в нужном месте на карте.
           </div>
         </div>
-        <div class="column is-half">
+        <div class="column is-two-third">
           <div id="map" style="height: 350px; width: 100%;"></div>
         </div>
       </div>
