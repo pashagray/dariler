@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**У нас блочат  ruby-gems и rvm, поэтому сначала VPN! **
 
-Things you may want to cover:
+Устанавилвать ruby желательно через rvm [http://rvm.io/](http://rvm.io/)
 
-* Ruby version
 
-* System dependencies
+```bash
 
-* Configuration
+cd path/to/project
 
-* Database creation
+# Устанавливаем 
+rvm install ruby-2.7.1
+rvm gemset create dariler
+rvm use ruby-2.7.1@dariler
 
-* Database initialization
+# Гемы и npm
+gem install rails
+bundle install
+yarn install
 
-* How to run the test suite
+# Поднимаем базу
+rake db:create
+rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+# Наполняем базовыми данными
+rake db:seed
 
-* Deployment instructions
+# Запуск на localhost:3000
+rails s
 
-* ...
+# Консоль
+rails c
+
+# Если захочется вебпак в отдельном процессе
+# Без этого компиляция будет при обновлении страницы,
+# а не при изменении файлов
+./bin/webpack-dev-server
+```
