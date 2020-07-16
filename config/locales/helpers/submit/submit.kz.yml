@@ -1,0 +1,9 @@
+kz:
+  helpers:
+    submit:
+      drug:
+        create: "Дәрі-дәрмек қосу"
+        update: "Деректерді жаңарту"
+      drugstore:
+        create: "Дәріхана қосу"
+        update: "Деректерді жаңарту"

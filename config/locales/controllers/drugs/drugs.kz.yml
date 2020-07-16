@@ -1,0 +1,6 @@
+kz:
+  drugs:
+    create:
+      success: "Дәрі сәтті қосылды"
+      failure: "Қатені анықтаңыз"
+      already_exists: "Дәрі біздің каталогта бар"

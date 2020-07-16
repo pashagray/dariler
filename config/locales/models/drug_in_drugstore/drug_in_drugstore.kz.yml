@@ -1,0 +1,5 @@
+kz:
+  drug_in_drugstore:
+    STATUSES:
+      AVAILABLE: "Қоймада бар"
+      UNAVAILABLE: "Қоймада жоқ"

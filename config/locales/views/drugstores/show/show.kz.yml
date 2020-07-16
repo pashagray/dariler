@@ -1,0 +1,10 @@
+kz:
+  drugstores:
+    show:
+      stats:
+        available_drugs: "Қоймада бар"
+        unavailable_drugs: "Жоқ"
+        noinfo_drugs: "Ақпарат жоқ"
+        last_update: "Соңғы жаңарту"
+      available_drugs: "Қол жетімді дәрілер"
+      unavailable_drugs: "Жетіспейтін дәрі-дәрмектер"

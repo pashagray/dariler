@@ -1,0 +1,5 @@
+kz:
+  drugstores:
+    create:
+      success: "Дәріхана сәтті қосылды"
+      failure: "Қатені анықтаңыз"

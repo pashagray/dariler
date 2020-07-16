@@ -1,0 +1,9 @@
+kz:
+  layouts:
+    application:
+      topbar:
+        drugs: "Дәрі-дәрмектер"
+        drugstores: "Дәріханалар"
+        add_drug: "Дәрі-дәрмек қосу"
+        add_drugstore: "Дәріхана қосу"
+        about: "Жоба туралы"
