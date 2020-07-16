@@ -1,0 +1,7 @@
+kz:
+  activerecord:
+    models:
+      drug: "Дәрі-дәрмек"
+    attributes:
+      drug:
+        title_ru: "Дәрі атауы"

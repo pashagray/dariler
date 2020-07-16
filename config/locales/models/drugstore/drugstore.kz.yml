@@ -1,0 +1,10 @@
+kz:
+  activerecord:
+    models:
+      drugstore: "Дәріхана"
+    attributes:
+      drugstore:
+        title: "Дәріхана аты"
+        coords: "Координаттар"
+        city: "Қала"
+        address: "Мекен-жайы"
